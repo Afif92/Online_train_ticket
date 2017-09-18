@@ -1,0 +1,88 @@
+<html>
+<head>
+
+    
+	<title>Book Your Seat</title>
+	<link href="css/bootstrap.css" rel="stylesheet" />
+	<link href="css/bootstrap-theme.css" rel="stylesheet" />
+	<link href="css/main.css" rel="stylesheet" />
+
+
+<?php include 'navbar_fragment.php'; ?>
+<title>Ticket Price</title>
+
+	
+</head>
+<body>
+
+<div class="container-fluid">
+
+
+          <div class="row-fluid">
+          <!--fullwidth row-->
+          <div class="span12">
+          <div class="well">
+<script type="text/javascript">
+function readXML()
+ {
+    var xml=new XMLHttpRequest();
+	xml.open('GET','xml.xml',false);
+	xml.send();
+	var xmlData=xml.responseXML;
+	if(!xmlData)
+	{
+		xmlData=(new DOMParser()).parseFromString(xml.responseText,'text/xml');
+		var tkt=xmlData.getElementsByTagName("ticket");
+		var road=tkt[0].getElementsByTagName("road")[0].firstChild.data;
+		var price=tkt[0].getElementsByTagName("price")[0].firstChild.data;
+		var img = document.createElement("img");
+        img.src = tkt[0].getElementsByTagName("image")[0].childNodes[0].nodeValue;
+		document.write("<h2>Road :"+road+"</h2><br>");
+		document.write("<h3>Price :"+price+"</h3><br>");
+		document.body.appendChild(img);
+		
+		
+		var road=tkt[1].getElementsByTagName("road")[0].firstChild.data;
+		var price=tkt[1].getElementsByTagName("price")[0].firstChild.data;
+		var img = document.createElement("img");
+        img.src = tkt[1].getElementsByTagName("image")[0].childNodes[0].nodeValue;
+		document.write("<h2>Road :"+road+"</h2><br>");
+		document.write("<h3>Price :"+price+"</h3><br>");
+		document.body.appendChild(img);
+	}
+}
+function readXML1()
+ {
+    var xml=new XMLHttpRequest();
+	xml.open('GET','xml.xml',false);
+	xml.send();
+	var xmlData=xml.responseXML;
+	if(!xmlData)
+	{
+		xmlData=(new DOMParser()).parseFromString(xml.responseText,'text/xml');
+		var tkt=xmlData.getElementsByTagName("ticket");
+		var road=tkt[2].getElementsByTagName("road")[0].firstChild.data;
+		var price=tkt[2].getElementsByTagName("price")[0].firstChild.data;
+		var img = document.createElement("img");
+        img.src = tkt[2].getElementsByTagName("image")[0].childNodes[0].nodeValue;
+		document.write("<h2>Road :"+road+"</h2><br>");
+		document.write("<h3>Price :"+price+"</h3><br>");
+		document.body.appendChild(img);
+		
+		
+		var road=tkt[3].getElementsByTagName("road")[0].firstChild.data;
+		var price=tkt[3].getElementsByTagName("price")[0].firstChild.data;
+		var img = document.createElement("img");
+        img.src = tkt[3].getElementsByTagName("image")[0].childNodes[0].nodeValue;
+		document.write("<h2>Road :"+road+"</h2><br>");
+		document.write("<h3>Price :"+price+"</h3><br>");
+		document.body.appendChild(img);
+	}
+}
+</script>
+<h1>Dhaka to Mymensingh</h1>
+<button onclick="readXML()">Show details</button>
+<h1>Mymensingh to Dhaka</h1>
+<button onclick="readXML1()">Show details</button>
+</body>
+</html>

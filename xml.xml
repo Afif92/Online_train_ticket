@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<tickets>
+  <ticket>
+    <road>Dhaka-Mymensingh</road>
+	<class>First Class</class>
+	<image>fc1.jpg</image>
+	<price>300</price>
+	</ticket>
+   <ticket>
+	<road>Dhaka-Mymensingh</road>
+	<class>Secound Class</class>
+	<image>sc1.jpg</image>
+	<price>150</price>
+	</ticket>
+  <ticket>
+    <road>Mymensingh-Dhaka</road>
+	<class>First Class</class>
+	<image>fc1.jpg</image>
+	<price>175</price>
+	</ticket>
+   <ticket>
+	<road>Mymensingh-Dhaka</road>
+	<class>Secound Class</class>
+	<image>sc1.jpg</image>
+	<price>150</price>
+	</ticket>
+</tickets>
+</xml>

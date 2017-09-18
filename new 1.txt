@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+<script type="text/javascript">
+   $(ducoment).ready(function(){
+       $.ajax({
+         type: "GET",
+         url:"tprice.xml",
+	dataType:"xml",
+	success:xmlParser
+        });
+
+});
+ 
+	function xmlParser(xml){
+		$('#load').fadeOut();
+		$(xml.find("ticket").echo(function(){
+		$("#container").append('<div class="ticket"><img scr="images/'+$
+		(this).find("image").text()+'"width="200" height="225" alt="'+ $(this).find("title").text() +
+		'"/><br/><div class="title">' + $(this).find("title").text() + '<br/>$'+$(this).find("price").text()
+		+'</div></div>');
+		$(".ticket").fadeIn(1000);
+		       });
+			   }
+			   </script>
+			   
+			   
+			   <div id="container">
+			   <div aligan="center" class="loader"><img scr="image/loading.gif" id="load" width="400"
+			   hight="400" aligan="absmiddle"/></div>
+			        </div>
+</html>
